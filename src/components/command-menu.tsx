@@ -41,9 +41,9 @@ export const CommandMenu = ({ links }: Props) => {
 
   return (
     <>
-      <p className="fixed bottom-0 left-0 right-0 hidden border-t border-t-muted bg-white p-1 text-center text-sm text-muted-foreground print:hidden xl:block">
+      <p className="border-t-muted bg-background text-muted-foreground fixed bottom-0 left-0 right-0 hidden border-t p-1 text-center text-sm print:hidden xl:block">
         Press{" "}
-        <kbd className="pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium text-muted-foreground opacity-100">
+        <kbd className="bg-muted text-muted-foreground pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border px-1.5 font-mono text-[10px] font-medium opacity-100">
           <span className="text-xs">{isMac ? "⌘" : "Ctrl"}</span>+J
         </kbd>{" "}
         to open the command menu
@@ -54,7 +54,7 @@ export const CommandMenu = ({ links }: Props) => {
         size="icon"
         className="fixed bottom-4 right-4 flex rounded-full shadow-2xl print:hidden xl:hidden"
       >
-        <CommandIcon className="my-6 size-6" />
+        <CommandIcon className="size-6 my-6" />
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Type a command or search..." />
