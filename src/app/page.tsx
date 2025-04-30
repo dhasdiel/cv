@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://cv.jarocki.me/opengraph-image",
+        url: "https://dhasdiel-cv.vercel.app/opengraph-image",
         width: 1200,
         height: 630,
         alt: `${RESUME_DATA.name}'s profile picture`,
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${RESUME_DATA.name} - Resume`,
     description: RESUME_DATA.about,
-    images: ["https://cv.jarocki.me/opengraph-image"],
+    images: ["https://dhasdiel-cv.vercel.app/opengraph-image"],
   },
 };
 
@@ -67,7 +67,7 @@ export default function ResumePage() {
       </div>
 
       <section
-        className="mx-auto w-full max-w-2xl space-y-8 bg-background print:space-y-4"
+        className="bg-background mx-auto w-full max-w-2xl space-y-8 print:space-y-4"
         aria-label="Resume Content"
       >
         <Header />
@@ -75,13 +75,14 @@ export default function ResumePage() {
         <div className="space-y-8 print:space-y-4">
           <Summary summary={RESUME_DATA.summary} />
 
+          <Skills skills={RESUME_DATA.skills} />
+
           <WorkExperience work={RESUME_DATA.work} />
 
           <ArmyService army={RESUME_DATA.army} />
 
           <Education education={RESUME_DATA.education} />
 
-          <Skills skills={RESUME_DATA.skills} />
 
           {/* <Projects projects={RESUME_DATA.projects} /> */}
         </div>
