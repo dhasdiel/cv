@@ -138,6 +138,7 @@ export const RESUME_DATA = {
     "TypeScript",
     "Tailwind CSS",
     "Design Systems",
+    "State Management",
     "WebRTC",
     "WebSockets",
     "Node.js",
