@@ -8,10 +8,10 @@ export const RESUME_DATA = {
   location: "Bnei Brak, Israel",
   locationLink: "https://www.google.com/maps/place/Bnei+Brak",
   about:
-    "Detail-oriented Full Stack Engineer dedicated to building high-quality products.",
+    "Detail-oriented Full Stack Developer dedicated to building high-quality products.",
   summary: (
     <>
-      Frontend-focused Full Stack Engineer specializing in high-performance
+      Frontend-focused Full Stack Developer specializing in high-performance
       React applications, scalable Node.js services, and real-time collaboration
       systems. Experienced in technical architecture design.
     </>
