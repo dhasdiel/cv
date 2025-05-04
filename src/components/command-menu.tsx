@@ -39,6 +39,34 @@ export const CommandMenu = ({ links }: Props) => {
     return () => document.removeEventListener("keydown", down);
   }, []);
 
+  const handleSelectPrint = () => {
+    setOpen(false);
+    const currentTheme = theme;
+
+    const handlePrint = async () => {
+      // If in dark mode, switch to light mode for printing
+      if (currentTheme === "dark") {
+        setTheme("light");
+
+        // Wait for theme change to take effect
+        await new Promise((resolve) => setTimeout(resolve, 600));
+
+        // Print
+        window.print();
+
+        // Wait for print dialog to close before switching back
+        setTimeout(() => {
+          setTheme("dark");
+        }, 100);
+      } else {
+        // Already in light mode, just print
+        window.print();
+      }
+    };
+
+    handlePrint();
+  };
+
   return (
     <>
       <p className="border-t-muted bg-background text-muted-foreground fixed bottom-0 left-0 right-0 hidden border-t p-1 text-center text-sm print:hidden xl:block">
@@ -61,12 +89,7 @@ export const CommandMenu = ({ links }: Props) => {
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Actions">
-            <CommandItem
-              onSelect={() => {
-                setOpen(false);
-                window.print();
-              }}
-            >
+            <CommandItem onSelect={handleSelectPrint}>
               <span>Print</span>
             </CommandItem>
             <CommandItem
