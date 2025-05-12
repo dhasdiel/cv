@@ -11,7 +11,7 @@ export const RESUME_DATA = {
     "Detail-oriented Full Stack Developer dedicated to building high-quality products.",
   summary: (
     <>
-      Detail-oriented Full Stack Engineer with a strong focus on frontend
+      Detail-oriented Full Stack Developer with a strong focus on frontend
       technologies. Experienced in building robust React applications, scalable
       Node.js backends, and real-time control systems for robotics. Passionate
       about system architecture, performance optimization, and delivering
