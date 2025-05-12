@@ -31,7 +31,7 @@ export const RESUME_DATA = {
       },
       {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/daniel-hasdiel-3933b21a4/",
+        url: "https://www.linkedin.com/in/daniel-hasdiel",
         icon: LinkedInIcon,
       },
       {
