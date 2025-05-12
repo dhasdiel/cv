@@ -59,13 +59,17 @@ function WorkPeriod({ start, end }: WorkPeriodProps) {
 
 interface CompanyLinkProps {
   company: WorkExperience["company"];
-  link: WorkExperience["link"];
+  link?: string;
 }
 
 /**
  * Renders company name with optional link
  */
 function CompanyLink({ company, link }: CompanyLinkProps) {
+  if (!link) {
+    return <span>{company}</span>;
+  }
+  
   return (
     <a
       className="hover:underline"
@@ -88,7 +92,8 @@ interface WorkExperienceItemProps {
  * Handles responsive layout for badges (mobile/desktop)
  */
 function WorkExperienceItem({ work }: WorkExperienceItemProps) {
-  const { company, link, badges, title, start, end, description } = work;
+  const { company, badges, title, start, end, description } = work;
+  const link = 'link' in work ? work.link as string : undefined;
 
   return (
     <Card className="py-1 print:py-0">
