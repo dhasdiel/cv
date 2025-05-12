@@ -11,9 +11,11 @@ export const RESUME_DATA = {
     "Detail-oriented Full Stack Developer dedicated to building high-quality products.",
   summary: (
     <>
-      Frontend-focused Full Stack Developer specializing in high-performance
-      React applications, scalable Node.js services, and real-time collaboration
-      systems. Experienced in technical architecture design.
+      Detail-oriented Full Stack Engineer with a strong focus on frontend
+      technologies. Experienced in building robust React applications, scalable
+      Node.js backends, and real-time control systems for robotics. Passionate
+      about system architecture, performance optimization, and delivering
+      mission-critical software.
     </>
   ),
   avatarUrl: MyAvatar,
@@ -50,34 +52,30 @@ export const RESUME_DATA = {
   ],
   work: [
     {
-      company: "IDF (Robotics and Automation)",
-      link: "https://hatal.co.il",
+      company: "IDF - Robotics & Automation",
       badges: ["React", "TypeScript", "Python", "ROS2"],
-      title: "Full Stack Developer / Advisor",
-      logo: ConsultlyLogo,
+      title: "Full Stack Developer / Lead Frontend Developer / Advisor",
       start: "2024",
       end: null,
       description: (
         <>
-          Leading technical architecture of a blockchain-based film funding
-          platform.
           <ul className="list-inside list-disc">
             <li>
-              Led the client-side development for a vehicle control application
-              deployed on over 100 remote control vehicles, supporting
-              operational forces in the field.
+              Led the frontend development of a vehicle remote control system
+              deployed across 100+ remote vehicles used in live field
+              operations.
             </li>
             <li>
-              Collaborated with leading defense industries to deliver
-              high-quality front-end solutions.
+              Architected and implemented a Microfrontends solution to improve
+              development scalability and team efficiency.
             </li>
             <li>
-              Optimized project efficiency by implementing a Microfrontends
-              architecture.
+              Took an active role in system design, planning, and implementation
+              across multiple projects.
             </li>
             <li>
-              Actively contributed to the system’s design, planning, and
-              implementation phases.
+              Collaborated with leading defense industry partners to deliver
+              cutting-edge front-end solutions.
             </li>
           </ul>
         </>
@@ -87,15 +85,12 @@ export const RESUME_DATA = {
   army: [
     {
       title: "Full Stack Developer",
-      company: "IDF (Robotics and Automation)",
-      link: "https://hatal.co.il",
+      company: "IDF - Robotics & Automation",
       badges: ["React", "TypeScript", "Node.js"],
       start: "2022",
       end: "2024",
       description: (
         <>
-          Leading technical architecture of a blockchain-based film funding
-          platform.
           <ul className="list-inside list-disc">
             <li>
               Developed and maintained a drone fleet control system as part of a
@@ -118,9 +113,8 @@ export const RESUME_DATA = {
       ),
     },
     {
-      title: "Full Stack Development Course",
+      title: "Full Stack Development Trainee",
       company: "IDF",
-      link: "https://hatal.co.il",
       badges: ["React", "Node.js", "C", "Java"],
       start: "2021",
       end: "2022",
