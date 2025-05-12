@@ -12,9 +12,9 @@ export const RESUME_DATA = {
   summary: (
     <>
       Detail-oriented Full Stack Developer with a strong focus on frontend
-      technologies. Experienced in building robust React applications, scalable
-      Node.js backends, and real-time control systems for robotics. Passionate
-      about system architecture, performance optimization, and delivering
+      technologies. Experienced in building robust applications, scalable
+      backends, and real-time control systems for robotics. Passionate about
+      system architecture, performance optimization, and delivering
       mission-critical software.
     </>
   ),
