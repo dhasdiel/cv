@@ -53,12 +53,18 @@ export const RESUME_DATA = {
   work: [
     {
       company: "IDF - Robotics & Automation",
-      badges: ["React", "TypeScript", "Python", "ROS2"],
-      title: "Full Stack Developer / Lead Frontend Developer / Advisor",
+      badges: [],
+      title: "Full Stack Developer | Lead Frontend Developer | Advisor",
       start: "2024",
       end: null,
       description: (
         <>
+          <p>
+            Leading the design and development of frontend architecture and
+            backend features for full-stack applications in the field of
+            autonomous robotics and drones.
+          </p>
+          <br />
           <ul className="list-inside list-disc">
             <li>
               Led the frontend development of a vehicle remote control system
@@ -86,11 +92,17 @@ export const RESUME_DATA = {
     {
       title: "Full Stack Developer",
       company: "IDF - Robotics & Automation",
-      badges: ["React", "TypeScript", "Node.js"],
+      badges: [],
       start: "2022",
       end: "2024",
       description: (
         <>
+          <p>
+            Designing and developing frontend and backend features for
+            full-stack applications in the field of autonomous robotics and
+            drones.
+          </p>
+          <br />
           <ul className="list-inside list-disc">
             <li>
               Developed and maintained a drone fleet control system as part of a
@@ -115,7 +127,7 @@ export const RESUME_DATA = {
     {
       title: "Full Stack Development Trainee",
       company: "IDF",
-      badges: ["React", "Node.js", "C", "Java"],
+      badges: [],
       start: "2021",
       end: "2022",
       description: (
@@ -133,6 +145,7 @@ export const RESUME_DATA = {
     "Tailwind CSS",
     "Design Systems",
     "State Management",
+    "Microfrontends",
     "WebRTC",
     "WebSockets",
     "Node.js",
