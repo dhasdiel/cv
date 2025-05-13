@@ -10,7 +10,7 @@ interface LocationLinkProps {
 
 function LocationLink({ location, locationLink }: LocationLinkProps) {
   return (
-    <p className="max-w-md items-center text-pretty font-mono text-xs text-foreground">
+    <p className="text-pretty text-foreground max-w-md items-center font-mono text-xs">
       <a
         className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
         href={locationLink}
@@ -54,7 +54,7 @@ interface ContactButtonsProps {
 function ContactButtons({ contact, personalWebsiteUrl }: ContactButtonsProps) {
   return (
     <div
-      className="flex gap-x-1 pt-1 font-mono text-sm text-foreground/80 print:hidden"
+      className="text-foreground/80 flex gap-x-1 pt-1 font-mono text-sm print:hidden"
       role="list"
       aria-label="Contact links"
     >
@@ -99,13 +99,13 @@ interface PrintContactProps {
 function PrintContact({ contact, personalWebsiteUrl }: PrintContactProps) {
   return (
     <div
-      className="hidden gap-x-2 font-mono text-sm text-foreground/80 print:flex print:text-[12px]"
+      className="text-foreground/80 hidden gap-x-2 font-mono text-sm print:flex print:text-[12px]"
       aria-label="Print contact information"
     >
       {personalWebsiteUrl && (
         <>
           <a
-            className="underline hover:text-foreground/70"
+            className="hover:text-foreground/70 underline"
             href={personalWebsiteUrl}
           >
             {new URL(personalWebsiteUrl).hostname}
@@ -116,7 +116,7 @@ function PrintContact({ contact, personalWebsiteUrl }: PrintContactProps) {
       {contact.email && (
         <>
           <a
-            className="underline hover:text-foreground/70"
+            className="hover:text-foreground/70 underline"
             href={`mailto:${contact.email}`}
           >
             {contact.email}
@@ -125,11 +125,22 @@ function PrintContact({ contact, personalWebsiteUrl }: PrintContactProps) {
         </>
       )}
       {contact.tel && (
+        <>
+          <a
+            className="hover:text-foreground/70 underline"
+            href={`tel:${contact.tel}`}
+          >
+            {contact.tel}
+          </a>
+          <span aria-hidden="true">/</span>
+        </>
+      )}
+      {contact.social[1] && (
         <a
-          className="underline hover:text-foreground/70"
-          href={`tel:${contact.tel}`}
+          className="hover:text-foreground/70 underline"
+          href={contact.social[1].url}
         >
-          {contact.tel}
+          {contact.social[1].name}
         </a>
       )}
     </div>
@@ -147,7 +158,7 @@ export function Header() {
           {RESUME_DATA.name}
         </h1>
         <p
-          className="max-w-md text-pretty font-mono text-sm text-foreground/80 print:text-[12px]"
+          className="text-pretty text-foreground/80 max-w-md font-mono text-sm print:text-[12px]"
           aria-labelledby="resume-name"
         >
           {RESUME_DATA.about}
