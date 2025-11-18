@@ -69,7 +69,7 @@ function CompanyLink({ company, link }: CompanyLinkProps) {
   if (!link) {
     return <span>{company}</span>;
   }
-  
+
   return (
     <a
       className="hover:underline"
@@ -93,7 +93,7 @@ interface ArmyServiceItemProps {
  */
 function ArmyServiceItem({ work }: ArmyServiceItemProps) {
   const { company, badges, title, start, end, description } = work;
-  const link = 'link' in work ? work.link as string : undefined;
+  const link = "link" in work ? (work.link as string) : undefined;
 
   return (
     <Card className="py-1 print:py-0">
@@ -109,13 +109,13 @@ function ArmyServiceItem({ work }: ArmyServiceItemProps) {
           <WorkPeriod start={start} end={end} />
         </div>
 
-        <h4 className="font-mono text-sm font-semibold leading-none print:text-[12px]">
+        <h4 className=" text-sm font-semibold leading-none print:text-[12px]">
           {title}
         </h4>
       </CardHeader>
 
       <CardContent>
-        <div className="mt-2 text-xs text-foreground/80 print:mt-1 print:text-[10px] text-pretty">
+        <div className="text-foreground/80 text-pretty mt-2 text-xs print:mt-1 print:text-[10px]">
           {description}
         </div>
         <div className="mt-2">
@@ -143,7 +143,11 @@ export function ArmyService({ army }: ArmyServiceProps) {
       <h2 className="text-xl font-bold" id="army-service">
         Army Service
       </h2>
-      <div className="space-y-4 print:space-y-0" role="feed" aria-labelledby="army-service">
+      <div
+        className="space-y-4 print:space-y-0"
+        role="feed"
+        aria-labelledby="army-service"
+      >
         {army.map((item) => (
           <article key={`${item.company}-${item.start}`} role="article">
             <ArmyServiceItem work={item} />

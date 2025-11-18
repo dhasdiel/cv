@@ -10,7 +10,7 @@ interface LocationLinkProps {
 
 function LocationLink({ location, locationLink }: LocationLinkProps) {
   return (
-    <p className="text-pretty text-foreground max-w-md items-center font-mono text-xs">
+    <p className="text-pretty text-foreground max-w-md items-center  text-xs">
       <a
         className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
         href={locationLink}
@@ -54,7 +54,7 @@ interface ContactButtonsProps {
 function ContactButtons({ contact, personalWebsiteUrl }: ContactButtonsProps) {
   return (
     <div
-      className="text-foreground/80 flex gap-x-1 pt-1 font-mono text-sm print:hidden"
+      className="text-foreground/80 flex gap-x-1 pt-1  text-sm print:hidden"
       role="list"
       aria-label="Contact links"
     >
@@ -99,7 +99,7 @@ interface PrintContactProps {
 function PrintContact({ contact, personalWebsiteUrl }: PrintContactProps) {
   return (
     <div
-      className="text-foreground/80 hidden gap-x-2 font-mono text-sm print:flex print:text-[12px]"
+      className="text-foreground/80 hidden gap-x-2  text-sm print:flex print:text-[12px]"
       aria-label="Print contact information"
     >
       {personalWebsiteUrl && (
@@ -158,7 +158,7 @@ export function Header() {
           {RESUME_DATA.name}
         </h1>
         <p
-          className="text-pretty text-foreground/80 max-w-md font-mono text-sm print:text-[12px]"
+          className="text-pretty text-foreground/80 max-w-md text-sm print:text-[12px]"
           aria-labelledby="resume-name"
         >
           {RESUME_DATA.about}
