@@ -11,7 +11,7 @@ import {
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command";
-import { CommandIcon } from "lucide-react";
+import { CommandIcon, Menu } from "lucide-react";
 import { Button } from "./ui/button";
 import { useTheme } from "next-themes";
 import { Kbd, KbdGroup } from "./ui/kbd";
@@ -85,7 +85,11 @@ export const CommandMenu = ({ links }: Props) => {
         size="icon"
         className="fixed bottom-4 right-4 flex rounded-full shadow-2xl print:hidden xl:hidden"
       >
-        <CommandIcon className="size-6 my-6" />
+        {isMac ? (
+          <CommandIcon className="size-6 my-6" />
+        ) : (
+          <Menu className="size-6 my-6" />
+        )}
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Type a command or search..." />
