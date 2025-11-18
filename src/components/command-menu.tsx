@@ -14,6 +14,7 @@ import {
 import { CommandIcon } from "lucide-react";
 import { Button } from "./ui/button";
 import { useTheme } from "next-themes";
+import { Kbd, KbdGroup } from "./ui/kbd";
 
 interface Props {
   links: { url: string; title: string }[];
@@ -29,7 +30,7 @@ export const CommandMenu = ({ links }: Props) => {
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      if (e.key === "j" && (e.metaKey || e.ctrlKey)) {
+      if (e.key === "m" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
         setOpen((open) => !open);
       }
@@ -70,10 +71,12 @@ export const CommandMenu = ({ links }: Props) => {
   return (
     <>
       <p className="border-t-muted bg-background text-muted-foreground fixed bottom-0 left-0 right-0 hidden border-t p-1 text-center text-sm print:hidden xl:block">
-        Press{" "}
-        <kbd className="bg-muted text-muted-foreground pointer-events-none inline-flex h-5 select-none items-center gap-1 rounded border px-1.5  text-[10px] font-medium opacity-100">
-          <span className="text-xs">{isMac ? "⌘" : "Ctrl"}</span>+J
-        </kbd>{" "}
+        Press
+        <KbdGroup className="mx-2">
+          <Kbd>{isMac ? "⌘" : "Ctrl"}</Kbd>
+          <span>+</span>
+          <Kbd>M</Kbd>
+        </KbdGroup>
         to open the command menu
       </p>
       <Button
