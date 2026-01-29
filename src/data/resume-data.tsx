@@ -78,9 +78,9 @@ export const RESUME_DATA = {
               complex workstreams.
             </li>
             <li>
-              Strategic Collaboration: Partnering with leading defense industry
-              stakeholders to deliver cutting-edge, field-ready solutions
-              tailored to operational requirements.
+              Partnering with leading defense industry stakeholders to deliver
+              cutting-edge, field-ready solutions tailored to operational
+              requirements.
             </li>
           </ul>
         </>
