@@ -52,7 +52,7 @@ export const RESUME_DATA = {
   ],
   work: [
     {
-      company: "Algolight Ltd.",
+      company: "Algolight Ltd",
       badges: [],
       title: "Full Stack Developer",
       start: "2025",
