@@ -52,11 +52,46 @@ export const RESUME_DATA = {
   ],
   work: [
     {
+      company: "Algolight Ltd",
+      badges: [],
+      title: "Full Stack Developer",
+      start: "2025",
+      end: null,
+      description: (
+        <>
+          <p>
+            Leading the end-to-end design and development of frontend
+            architecture and backend features for Command and Control (C2)
+            platform for ground robotics serving the IDF’s Robotics and
+            Automation Division.
+          </p>
+          <br />
+          <ul className="list-inside list-disc">
+            <li>
+              Driving system design and strategic planning for multi-faceted
+              defense projects, ensuring high-performance and robust software
+              delivery.
+            </li>
+            <li>
+              Architected and implemented a Microfrontends solution to enhance
+              development scalability and streamline team efficiency across
+              complex workstreams.
+            </li>
+            <li>
+              Partnering with leading defense industry stakeholders to deliver
+              cutting-edge, field-ready solutions tailored to operational
+              requirements.
+            </li>
+          </ul>
+        </>
+      ),
+    },
+    {
       company: "IDF - Robotics & Automation",
       badges: [],
       title: "Full Stack Developer | Lead Frontend Developer | Advisor",
       start: "2024",
-      end: null,
+      end: 2025,
       description: (
         <>
           <p>
