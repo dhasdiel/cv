@@ -1,6 +1,7 @@
 import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { PrintButton } from "@/components/print-button";
 import { RESUME_DATA } from "@/data/resume-data";
 
 interface LocationLinkProps {
@@ -48,23 +49,15 @@ function SocialButton({ href, icon: Icon, label }: SocialButtonProps) {
 
 interface ContactButtonsProps {
   contact: typeof RESUME_DATA.contact;
-  personalWebsiteUrl?: string;
 }
 
-function ContactButtons({ contact, personalWebsiteUrl }: ContactButtonsProps) {
+function ContactButtons({ contact }: ContactButtonsProps) {
   return (
     <div
       className="text-foreground/80 flex gap-x-1 pt-1  text-sm print:hidden"
       role="list"
       aria-label="Contact links"
     >
-      {personalWebsiteUrl && (
-        <SocialButton
-          href={personalWebsiteUrl}
-          icon={GlobeIcon}
-          label="Personal website"
-        />
-      )}
       {contact.email && (
         <SocialButton
           href={`mailto:${contact.email}`}
@@ -87,32 +80,21 @@ function ContactButtons({ contact, personalWebsiteUrl }: ContactButtonsProps) {
           label={social.name}
         />
       ))}
+      <PrintButton />
     </div>
   );
 }
 
 interface PrintContactProps {
   contact: typeof RESUME_DATA.contact;
-  personalWebsiteUrl?: string;
 }
 
-function PrintContact({ contact, personalWebsiteUrl }: PrintContactProps) {
+function PrintContact({ contact }: PrintContactProps) {
   return (
     <div
       className="text-foreground/80 hidden gap-x-2  text-sm print:flex print:text-[12px]"
       aria-label="Print contact information"
     >
-      {personalWebsiteUrl && (
-        <>
-          <a
-            className="hover:text-foreground/70 underline"
-            href={personalWebsiteUrl}
-          >
-            {new URL(personalWebsiteUrl).hostname}
-          </a>
-          <span aria-hidden="true">/</span>
-        </>
-      )}
       {contact.email && (
         <>
           <a
@@ -169,15 +151,9 @@ export function Header() {
           locationLink={RESUME_DATA.locationLink}
         />
 
-        <ContactButtons
-          contact={RESUME_DATA.contact}
-          personalWebsiteUrl={RESUME_DATA.personalWebsiteUrl}
-        />
+        <ContactButtons contact={RESUME_DATA.contact} />
 
-        <PrintContact
-          contact={RESUME_DATA.contact}
-          personalWebsiteUrl={RESUME_DATA.personalWebsiteUrl}
-        />
+        <PrintContact contact={RESUME_DATA.contact} />
       </div>
 
       <Avatar className="size-28 print:hidden" aria-hidden="true">

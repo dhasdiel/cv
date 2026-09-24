@@ -49,7 +49,7 @@ interface WorkPeriodProps {
 function WorkPeriod({ start, end }: WorkPeriodProps) {
   return (
     <div
-      className="text-sm tabular-nums text-gray-500"
+      className="text-sm tabular-nums text-muted-foreground"
       aria-label={`Employment period: ${start} to ${end ?? "Present"}`}
     >
       {start} - {end ?? "Present"}
@@ -115,7 +115,7 @@ function WorkExperienceItem({ work }: WorkExperienceItemProps) {
       </CardHeader>
 
       <CardContent>
-        <div className="text-foreground/80 text-pretty mt-2 text-xs print:mt-1 print:text-[10px]">
+        <div className="text-foreground/80 text-pretty mt-2 max-w-prose text-xs print:mt-1 print:text-[10px]">
           {description}
         </div>
         <div className="mt-2">
@@ -143,17 +143,16 @@ export function WorkExperience({ work }: WorkExperienceProps) {
       <h2 className="text-xl font-bold" id="work-experience">
         Work Experience
       </h2>
-      <div
-        className="space-y-4 print:space-y-0"
-        role="feed"
+      <ul
+        className="list-none space-y-4 p-0 print:space-y-0"
         aria-labelledby="work-experience"
       >
         {work.map((item) => (
-          <article key={`${item.company}-${item.start}`} role="article">
+          <li key={`${item.company}-${item.start}`}>
             <WorkExperienceItem work={item} />
-          </article>
+          </li>
         ))}
-      </div>
+      </ul>
     </Section>
   );
 }

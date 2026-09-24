@@ -22,15 +22,16 @@ interface Props {
 
 export const CommandMenu = ({ links }: Props) => {
   const [open, setOpen] = React.useState(false);
+  const [isMac, setIsMac] = React.useState(false);
   const { theme, setTheme } = useTheme();
-  let isMac =
-    typeof window !== "undefined"
-      ? window.navigator.userAgent.indexOf("Mac") > -1
-      : false;
+
+  React.useEffect(() => {
+    setIsMac(window.navigator.userAgent.indexOf("Mac") > -1);
+  }, []);
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      if (e.key === "m" && (e.metaKey || e.ctrlKey)) {
+      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
         e.preventDefault();
         setOpen((open) => !open);
       }
@@ -42,30 +43,7 @@ export const CommandMenu = ({ links }: Props) => {
 
   const handleSelectPrint = () => {
     setOpen(false);
-    const currentTheme = theme;
-
-    const handlePrint = async () => {
-      // If in dark mode, switch to light mode for printing
-      if (currentTheme === "dark") {
-        setTheme("light");
-
-        // Wait for theme change to take effect
-        await new Promise((resolve) => setTimeout(resolve, 600));
-
-        // Print
-        window.print();
-
-        // Wait for print dialog to close before switching back
-        setTimeout(() => {
-          setTheme("dark");
-        }, 100);
-      } else {
-        // Already in light mode, just print
-        window.print();
-      }
-    };
-
-    handlePrint();
+    window.print();
   };
 
   return (
@@ -75,7 +53,7 @@ export const CommandMenu = ({ links }: Props) => {
         <KbdGroup className="mx-2">
           <Kbd>{isMac ? "⌘" : "Ctrl"}</Kbd>
           <span>+</span>
-          <Kbd>M</Kbd>
+          <Kbd>K</Kbd>
         </KbdGroup>
         to open the command menu
       </p>
@@ -83,7 +61,8 @@ export const CommandMenu = ({ links }: Props) => {
         onClick={() => setOpen((open) => !open)}
         variant="outline"
         size="icon"
-        className="fixed bottom-4 right-4 flex rounded-full shadow-2xl print:hidden xl:hidden"
+        className="fixed bottom-4 right-4 flex rounded-full shadow-lg print:hidden xl:hidden"
+        aria-label="Open command menu"
       >
         {isMac ? (
           <CommandIcon className="size-6 my-6" />

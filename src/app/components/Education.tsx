@@ -16,7 +16,7 @@ function EducationPeriod({ start, end }: EducationPeriodProps) {
   if (!start && !end) return null;
   return (
     <div
-      className="text-sm tabular-nums text-gray-500"
+      className="text-sm tabular-nums text-muted-foreground"
       aria-label={`Period: ${start ?? "?"} to ${end ?? "?"}`}
     >
       {start ?? "?"} - {end ?? "?"}
@@ -73,17 +73,13 @@ export function Education({ education }: EducationListProps) {
       <h2 className="text-xl font-bold" id="education-section">
         Education
       </h2>
-      <div
-        className="space-y-4"
-        role="feed"
-        aria-labelledby="education-section"
-      >
+      <ul className="list-none space-y-4 p-0" aria-labelledby="education-section">
         {education.map((item) => (
-          <article key={item.school} role="article">
+          <li key={item.school}>
             <EducationItem education={item} />
-          </article>
+          </li>
         ))}
-      </div>
+      </ul>
     </Section>
   );
 }

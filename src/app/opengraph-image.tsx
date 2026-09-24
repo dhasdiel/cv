@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { ImageResponse } from "next/og";
+import { headers } from "next/headers";
 import { RESUME_DATA } from "../data/resume-data";
 
 export const runtime = "edge";
@@ -13,6 +14,11 @@ export const size = {
 export const contentType = "image/png";
 
 export default async function Image() {
+  const h = await headers();
+  const host = h.get("host") ?? "dhasdiel-cv.vercel.app";
+  const proto = host.startsWith("localhost") ? "http" : "https";
+  const avatarSrc = `${proto}://${host}${RESUME_DATA.avatarUrl.src}`;
+
   return new ImageResponse(
     (
       <div
@@ -36,7 +42,7 @@ export default async function Image() {
           }}
         >
           <img
-            src={RESUME_DATA.avatarUrl.src}
+            src={avatarSrc}
             alt={RESUME_DATA.name}
             style={{
               width: "150px",
@@ -74,7 +80,7 @@ export default async function Image() {
           >
             {RESUME_DATA.contact.email && (
               <div style={{ fontSize: "1rem", color: "#666" }}>
-                {RESUME_DATA.personalWebsiteUrl}
+                {RESUME_DATA.contact.email}
               </div>
             )}
           </div>
