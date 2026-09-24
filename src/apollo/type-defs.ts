@@ -29,11 +29,11 @@ export class Education {
   @Field(() => String)
   degree: string;
 
-  @Field(() => String)
-  start: string;
+  @Field(() => String, { nullable: true })
+  start?: string | null;
 
-  @Field(() => String)
-  end: string;
+  @Field(() => String, { nullable: true })
+  end?: string | null;
 }
 
 @ObjectType()
@@ -41,8 +41,8 @@ export class Work {
   @Field(() => String)
   company: string;
 
-  @Field(() => String)
-  link: string;
+  @Field(() => String, { nullable: true })
+  link?: string;
 
   @Field(() => [String])
   badges: string[];
@@ -53,8 +53,8 @@ export class Work {
   @Field(() => String)
   start: string;
 
-  @Field(() => String)
-  end: string;
+  @Field(() => String, { nullable: true })
+  end?: string | number | null;
 
   @Field(() => String)
   description: string;
@@ -107,9 +107,6 @@ export class Me {
   @Field(() => String)
   avatarUrl: string;
 
-  @Field(() => String)
-  personalWebsiteUrl: string;
-
   @Field(() => Contact)
   contact: Contact;
 
@@ -118,6 +115,9 @@ export class Me {
 
   @Field(() => [Work])
   work: Work[];
+
+  @Field(() => [Work])
+  army: Work[];
 
   @Field(() => [String])
   skills: string[];

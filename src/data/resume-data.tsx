@@ -8,18 +8,17 @@ export const RESUME_DATA = {
   location: "Bnei Brak, Israel",
   locationLink: "https://www.google.com/maps/place/Bnei+Brak",
   about:
-    "Detail-oriented Full Stack Developer dedicated to building high-quality products.",
+    "Software Developer with 4+ years building command-and-control systems for autonomous robotics.",
   summary: (
     <>
-      Detail-oriented Full Stack Developer with a strong focus on frontend
-      technologies. Experienced in building robust applications, scalable
-      backends, and real-time control systems for robotics. Passionate about
-      system architecture, performance optimization, and delivering
-      mission-critical software.
+      Software Developer experienced in building mission-critical
+      command-and-control systems for autonomous robotics — from field
+      applications to real-time control, video, and telemetry pipelines.
+      Passionate about system architecture, performance optimization, and
+      reliable software operating real hardware.
     </>
   ),
   avatarUrl: MyAvatar,
-  personalWebsiteUrl: "",
   contact: {
     email: "danielhasdiel@gmail.com",
     tel: "+972506991754",
@@ -54,16 +53,16 @@ export const RESUME_DATA = {
     {
       company: "Algolight Ltd",
       badges: [],
-      title: "Full Stack Developer",
+      title: "Software Developer",
       start: "2025",
       end: null,
       description: (
         <>
           <p>
-            Leading the end-to-end design and development of frontend
-            architecture and backend features for Command and Control (C2)
-            platform for ground robotics serving the IDF’s Robotics and
-            Automation Division.
+            Developing Shor, a Kotlin Multiplatform Command and Control (C2)
+            application for operating and supervising heterogeneous robotic
+            units — drones and ground robots — from a single Android/Linux
+            client, serving the IDF’s Robotics and Automation Division.
           </p>
           <br />
           <ul className="list-inside list-disc">
@@ -73,9 +72,9 @@ export const RESUME_DATA = {
               delivery.
             </li>
             <li>
-              Architected and implemented a Microfrontends solution to enhance
-              development scalability and streamline team efficiency across
-              complex workstreams.
+              Building a robotic-unit-agnostic architecture where live video
+              (GStreamer/RTSP), MAVLink telemetry, recording, and control are
+              shared pipelines across all unit types.
             </li>
             <li>
               Partnering with leading defense industry stakeholders to deliver
@@ -181,14 +180,16 @@ export const RESUME_DATA = {
     "Design Systems",
     "State Management",
     "Microfrontends",
-    "WebRTC",
-    "WebSockets",
-    "Node.js",
-    "Python",
+    "Kotlin Multiplatform",
     "ROS2",
     "System Architecture",
+    "Node.js",
+    "Python",
+    "WebRTC",
+    "WebSockets",
     "Git",
     "Docker",
+    "Claude Code",
   ],
   projects: [
     {
