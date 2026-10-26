@@ -20,9 +20,9 @@ Success is a recruiter understanding who Daniel is and what level he operates at
 
 Three capabilities are load-bearing; a neighboring CV template that lacked any one of them would not be this product:
 
-1. **Print-perfect one-pager** — browser print produces a clean A4 CV (dedicated print CSS, print drawer). The saved/printed artifact is a first-class output, not a fallback.
+1. **Print-perfect one-pager** — browser print produces a clean A4 CV (dedicated print CSS, direct `window.print()`). The saved/printed artifact is a first-class output, not a fallback.
 2. **Interactive, shareable link** — a live URL with command menu, theme switching, and direct contact/social actions; richer than a document.
-3. **Queryable resume API** — a GraphQL endpoint exposing the resume as structured data; the site itself doubles as a technical signal about the author.
+3. **Queryable resume API** — GraphQL and MCP endpoints exposing the resume as structured data (plus `llms.txt` and `.well-known` discovery files); the site itself doubles as a technical signal about the author.
 
 ## Operating Context
 
@@ -36,7 +36,7 @@ Three capabilities are load-bearing; a neighboring CV template that lacked any o
 - **Minimalist single-page identity is binding** — density, whitespace, and legibility over decoration; no drift toward a louder marketing surface.
 - **Dark + light themes are binding** — both must keep working, including print behavior.
 - Content is real resume data: Algolight Ltd (Software Developer, Shor C2 platform), IDF Robotics & Automation, army service, skills, and projects (Monito, Consultly, Minimalist CV). No fabricated claims, testimonials, or metrics.
-- Print output is a feature: A4 sizing, reduced type scale, print-hidden interactive chrome.
+- Print output is a feature: A4 sizing, reduced type scale, print-hidden interactive chrome. Print always renders a light palette regardless of the site's active theme.
 
 ## Brand Commitments
 
