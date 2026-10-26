@@ -1,0 +1,27 @@
+# Daniel Hasdiel — CV
+
+> Personal CV site for Daniel Hasdiel, a software developer building
+> command-and-control systems for autonomous robotics (Algolight/Shor,
+> IDF Robotics & Automation). Single page: work history, skills, education,
+> army service, projects.
+
+## Machine-readable resume
+
+AI agents can read the resume as structured data — no auth, read-only:
+
+- MCP endpoint: `/mcp` (POST, streamable HTTP)
+  - `get_resume` — full resume as JSON
+  - `get_section` — one section: work | army | skills | education | projects | summary | contact
+  - `get_contact` — email, phone, GitHub/LinkedIn/X links
+- GraphQL: `/graphql` — the `me` query returns the same structured resume
+- The same MCP tools are exposed to in-page agents via WebMCP
+  (`navigator.modelContext`, loaded from `/mcp?webmcp-script`)
+
+## Pages
+
+- `/` — the entire CV; browser print produces a clean A4 one-pager
+
+## Notes
+
+- Single source of truth: `src/data/resume-data.tsx` — page, GraphQL, and MCP
+  all read from it.

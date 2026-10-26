@@ -46,6 +46,11 @@ export const CommandMenu = ({ links }: Props) => {
     window.print();
   };
 
+  const handleSelectCopyMcp = () => {
+    setOpen(false);
+    navigator.clipboard.writeText(`${window.location.origin}/mcp`);
+  };
+
   return (
     <>
       <p className="border-t-muted bg-background text-muted-foreground fixed bottom-0 left-0 right-0 hidden border-t p-1 text-center text-sm print:hidden xl:block">
@@ -77,6 +82,9 @@ export const CommandMenu = ({ links }: Props) => {
           <CommandGroup heading="Actions">
             <CommandItem onSelect={handleSelectPrint}>
               <span>Print</span>
+            </CommandItem>
+            <CommandItem onSelect={handleSelectCopyMcp}>
+              <span>Copy MCP endpoint</span>
             </CommandItem>
             <CommandItem
               onSelect={() => {
