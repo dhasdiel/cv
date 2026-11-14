@@ -12,8 +12,8 @@ export const RESUME_DATA = {
   summary: (
     <>
       Full Stack developer building the platform that connects robots to the
-      people who use them. Currently developing Shor at Algolight — a Kotlin
-      Multiplatform C2 app operating drones and ground robots from a single
+      people who use them. Currently developing a Kotlin Multiplatform C2 app
+      at Algolight, operating drones and ground robots from a single
       Android/Linux client for the IDF Robotics and Automation Division, now
       serving 100+ operators in the field. I own the robot-to-user platform
       end to end: live operations views, real-time video and telemetry,
@@ -65,7 +65,7 @@ export const RESUME_DATA = {
       description: (
         <>
           <p>
-            Developing Shor, a Kotlin Multiplatform Command and Control (C2)
+            Developing a Kotlin Multiplatform Command and Control (C2)
             application for operating and supervising heterogeneous robotic
             units — drones and ground robots — from a single Android/Linux
             client, serving the IDF’s Robotics and Automation Division, now
