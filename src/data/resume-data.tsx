@@ -59,7 +59,7 @@ export const RESUME_DATA = {
       description: (
         <>
           <p>
-            Developing Shor, a Kotlin Multiplatform Command and Control (C2)
+            Developing a Kotlin Multiplatform Command and Control (C2)
             application for operating and supervising heterogeneous robotic
             units — drones and ground robots — from a single Android/Linux
             client, serving the IDF’s Robotics and Automation Division.
