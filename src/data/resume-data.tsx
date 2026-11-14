@@ -51,7 +51,7 @@ export const RESUME_DATA = {
       school: "IDF with Ort",
       degree:
         "Software Technician Diploma, MAHAT, specializing in Full Stack Development.",
-      start: null,
+      start: "2020",
       end: "2021",
     },
   ],
