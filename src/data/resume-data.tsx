@@ -8,14 +8,19 @@ export const RESUME_DATA = {
   location: "Bnei Brak, Israel",
   locationLink: "https://www.google.com/maps/place/Bnei+Brak",
   about:
-    "Software Developer with 4+ years building command-and-control systems for autonomous robotics.",
+    "Full Stack Engineer — Software for the physical world.",
   summary: (
     <>
-      Software Developer experienced in building mission-critical
-      command-and-control systems for autonomous robotics — from field
-      applications to real-time control, video, and telemetry pipelines.
-      Passionate about system architecture, performance optimization, and
-      reliable software operating real hardware.
+      Full Stack developer building the software that connects people to the
+      physical world. Currently developing a Kotlin Multiplatform C2 app
+      at Algolight, operating drones and ground robots from a single
+      Android/Linux client for the IDF Robotics and Automation Division, now
+      serving 100+ operators in the field. I own the operator-facing
+      platform end to end: live operations views, real-time video and
+      telemetry, control pipelines, and deployment and monitoring in live
+      field operations. Previously Lead Frontend Developer at IDF Robotics
+      and Automation, leading frontend development of a vehicle remote
+      control system deployed across 100+ remote vehicles.
     </>
   ),
   avatarUrl: MyAvatar,
@@ -45,8 +50,8 @@ export const RESUME_DATA = {
       school: "IDF with Ort",
       degree:
         "Software Technician Diploma, MAHAT, specializing in Full Stack Development.",
-      start: null,
-      end: null,
+      start: "2020",
+      end: "2021",
     },
   ],
   work: [
@@ -62,24 +67,31 @@ export const RESUME_DATA = {
             Developing a Kotlin Multiplatform Command and Control (C2)
             application for operating and supervising heterogeneous robotic
             units — drones and ground robots — from a single Android/Linux
-            client, serving the IDF’s Robotics and Automation Division.
+            client, serving the IDF’s Robotics and Automation Division, now
+            serving 100+ operators in the field.
           </p>
           <br />
           <ul className="list-inside list-disc">
             <li>
-              Driving system design and strategic planning for multi-faceted
-              defense projects, ensuring high-performance and robust software
-              delivery.
+              Owning the operator-facing product end to end: building a
+              unit-agnostic architecture where live video (GStreamer/RTSP),
+              MAVLink telemetry, recording, and control are shared pipelines
+              across all unit types.
             </li>
             <li>
-              Building a robotic-unit-agnostic architecture where live video
-              (GStreamer/RTSP), MAVLink telemetry, recording, and control are
-              shared pipelines across all unit types.
+              Designing and building the real-time operations view operators
+              actually work with — live video, telemetry, and control in one
+              client — now serving 100+ operators in the field.
             </li>
             <li>
-              Partnering with leading defense industry stakeholders to deliver
-              cutting-edge, field-ready solutions tailored to operational
-              requirements.
+              Taking end-to-end technical responsibility from design to
+              production release, including deployment and monitoring in live
+              field operations.
+            </li>
+            <li>
+              Leading system design and strategic planning for multi-faceted
+              defense projects, working directly with defense industry
+              stakeholders to deliver field-ready solutions.
             </li>
           </ul>
         </>
@@ -174,19 +186,22 @@ export const RESUME_DATA = {
     },
   ],
   skills: [
-    "React/Next.js",
     "TypeScript",
+    "React/Next.js",
+    "Node.js",
+    "Python",
+    "WebSockets",
+    "WebRTC",
+    "GStreamer/RTSP",
     "Tailwind CSS",
     "Design Systems",
     "State Management",
     "Microfrontends",
-    "Kotlin Multiplatform",
-    "ROS2",
     "System Architecture",
-    "Node.js",
-    "Python",
-    "WebRTC",
-    "WebSockets",
+    "Kotlin Multiplatform",
+    "Kotlin",
+    "MAVLink",
+    "ROS2",
     "Git",
     "Docker",
     "Claude Code",
