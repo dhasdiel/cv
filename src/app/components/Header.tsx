@@ -130,38 +130,40 @@ function PrintContact({ contact }: PrintContactProps) {
 }
 
 /**
- * Header component displaying personal information and contact details
+ * Header component displaying personal information and contact details.
+ * Defaults to the base resume; a variant passes its own resolved data.
  */
-export function Header() {
+interface HeaderProps {
+  data?: typeof RESUME_DATA;
+}
+
+export function Header({ data = RESUME_DATA }: HeaderProps) {
   return (
     <header className="flex items-center justify-between">
       <div className="flex-1 space-y-1.5">
         <h1 className="text-2xl font-bold" id="resume-name">
-          {RESUME_DATA.name}
+          {data.name}
         </h1>
         <p
           className="text-pretty text-foreground/80 max-w-md text-sm print:text-[12px]"
           aria-labelledby="resume-name"
         >
-          {RESUME_DATA.about}
+          {data.about}
         </p>
 
-        <LocationLink
-          location={RESUME_DATA.location}
-          locationLink={RESUME_DATA.locationLink}
-        />
+        <LocationLink location={data.location} locationLink={data.locationLink} />
 
-        <ContactButtons contact={RESUME_DATA.contact} />
+        <ContactButtons contact={data.contact} />
 
-        <PrintContact contact={RESUME_DATA.contact} />
+        <PrintContact contact={data.contact} />
       </div>
 
       <Avatar className="size-28 print:hidden" aria-hidden="true">
         <AvatarImage
-          alt={`${RESUME_DATA.name}'s profile picture`}
-          src={RESUME_DATA.avatarUrl.src}
+          alt={`${data.name}'s profile picture`}
+          src={data.avatarUrl.src}
         />
-        <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
+        <AvatarFallback>{data.initials}</AvatarFallback>
       </Avatar>
     </header>
   );

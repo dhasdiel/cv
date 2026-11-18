@@ -1,9 +1,15 @@
-// Public MCP server: exposes the resume to AI agents. Read-only — no auth.
+// MCP server: exposes the resume to AI agents.
+// Read tools (get_resume, get_section, get_contact) are public and
+// read-only. The write tool (update_resume_variant) is gated by a secret
+// token (MCP_WRITE_TOKEN env var) and commits variant JSON files to the
+// repo via a GitHub token (GITHUB_TOKEN env var) — never from the repo.
 // Same data as the GraphQL `me` query and the page itself (src/data/resume-data.tsx).
+import { timingSafeEqual } from "node:crypto";
 import { createMcpHandler } from "mcp-handler";
 import { z } from "zod";
 
-import { resumeJson } from "@/lib/resume";
+import { resumeJson, resumeVariantSchema } from "@/lib/resume";
+import { commitVariantFile } from "@/lib/github";
 
 const json = (data: unknown) => ({
   content: [{ type: "text" as const, text: JSON.stringify(data) }],
@@ -63,6 +69,70 @@ const handler = createMcpHandler(
           "Email, phone, and social/profile links (GitHub, LinkedIn, X) for reaching Daniel Hasdiel.",
       },
       async () => json(resumeJson().contact),
+    );
+
+    // Write tool: NOT public. The caller must know the secret token.
+    // Saves a tailored resume variant (full resume JSON, same shape as
+    // get_resume returns) as src/data/variants/<variant>.json on branch
+    // mcp/variant-<variant>. The site renders it at /?variant=<variant>
+    // after Vercel redeploys the branch. Deliberately excluded from the
+    // in-browser WebMCP tools below.
+    server.registerTool(
+      "update_resume_variant",
+      {
+        title: "Save a tailored resume variant",
+        description:
+          "Save a tailored copy of Daniel Hasdiel's resume as a named variant. Pass the full resume JSON (same shape as get_resume returns) with the fields you tailored — about, summary, work descriptions, skills, education. Requires the secret write token. The variant is committed to branch mcp/variant-<variant> and renders at /?variant=<variant> once Vercel redeploys. The base resume is never touched.",
+        inputSchema: z.object({
+          token: z
+            .string()
+            .min(1)
+            .describe("Secret write token (MCP_WRITE_TOKEN env var)"),
+          variant: z
+            .string()
+            .regex(/^[a-z0-9][a-z0-9-]*$/)
+            .describe(
+              "URL-safe variant slug, e.g. robotic-imaging. Lowercase letters, digits and dashes only.",
+            ),
+          resume: resumeVariantSchema.describe(
+            "Full resume JSON in the get_resume shape",
+          ),
+        }),
+      },
+      async ({ token, variant, resume }) => {
+        const expected = process.env.MCP_WRITE_TOKEN;
+        const tokenBuf = Buffer.from(token);
+        const expectedBuf = expected ? Buffer.from(expected) : null;
+        if (
+          !expectedBuf ||
+          tokenBuf.length !== expectedBuf.length ||
+          !timingSafeEqual(tokenBuf, expectedBuf)
+        ) {
+          return json({ ok: false, error: "unauthorized" });
+        }
+        const ghToken = process.env.GITHUB_TOKEN;
+        if (!ghToken) {
+          return json({
+            ok: false,
+            error: "server_not_configured",
+            detail: "GITHUB_TOKEN is not set on the server",
+          });
+        }
+        try {
+          const result = await commitVariantFile({
+            token: ghToken,
+            variant,
+            content: JSON.stringify(resume, null, 2) + "\n",
+            message: `feat: resume variant ${variant} via MCP`,
+          });
+          return json({ ok: true, ...result });
+        } catch (e) {
+          return json({
+            ok: false,
+            error: e instanceof Error ? e.message : "commit failed",
+          });
+        }
+      },
     );
   },
   {

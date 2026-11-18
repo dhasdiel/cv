@@ -1,0 +1,138 @@
+{
+  "about": "Full Stack Engineer — Software for the physical world.",
+  "army": [
+    {
+      "badges": [],
+      "company": "IDF - Robotics & Automation",
+      "description": "Designing and developing frontend and backend features for full-stack applications in the field of autonomous robotics and drones.\n\n- Developed and maintained a drone fleet control system as part of a high-performing technological unit.\n- Took full responsibility for designing and implementing key client-side features, ensuring high usability and performance.\n- Collaborated with teammates to meet operational needs and deliver mission-critical software.\n- Contributed to problem-solving processes and the introduction of innovative technological solutions under tight deadlines.",
+      "end": "2024",
+      "start": "2022",
+      "title": "Full Stack Developer"
+    },
+    {
+      "badges": [],
+      "company": "IDF",
+      "description": "Successfully completed a comprehensive Full Stack Development course, acquiring hands-on experience in both front-end and back-end technologies.",
+      "end": "2022",
+      "start": "2021",
+      "title": "Full Stack Development Trainee"
+    }
+  ],
+  "contact": {
+    "email": "danielhasdiel@gmail.com",
+    "social": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/dhasdiel"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/in/daniel-hasdiel"
+      },
+      {
+        "name": "X",
+        "url": "https://x.com/dhasdiel"
+      }
+    ],
+    "tel": "+972506991754"
+  },
+  "education": [
+    {
+      "degree": "Software Technician Diploma, MAHAT, specializing in Full Stack Development.",
+      "end": "2021",
+      "school": "IDF with Ort",
+      "start": "2020"
+    }
+  ],
+  "initials": "DH",
+  "location": "Bnei Brak, Israel",
+  "locationLink": "https://www.google.com/maps/place/Bnei+Brak",
+  "name": "Daniel Hasdiel",
+  "projects": [
+    {
+      "description": "Browser extension for debugging web applications. Includes taking screenshots, screen recording, E2E tests generation and generating bug reports",
+      "link": {
+        "href": "https://monito.dev/",
+        "label": "monito.dev"
+      },
+      "techStack": [
+        "TypeScript",
+        "Next.js",
+        "Browser Extension",
+        "PostgreSQL"
+      ],
+      "title": "Monito"
+    },
+    {
+      "description": "Platform for online consultations with real-time video meetings and scheduling",
+      "link": {
+        "href": "https://consultly.com/",
+        "label": "consultly.com"
+      },
+      "techStack": [
+        "TypeScript",
+        "Next.js",
+        "Vite",
+        "GraphQL",
+        "WebRTC",
+        "Tailwind CSS",
+        "PostgreSQL",
+        "Redis"
+      ],
+      "title": "Consultly"
+    },
+    {
+      "description": "An open source minimalist, print friendly CV template with a focus on readability and clean design. >9k stars on GitHub",
+      "link": {
+        "href": "https://github.com/BartoszJarocki/cv",
+        "label": "Minimalist CV"
+      },
+      "techStack": [
+        "TypeScript",
+        "Next.js",
+        "Tailwind CSS"
+      ],
+      "title": "Minimalist CV"
+    }
+  ],
+  "skills": [
+    "TypeScript",
+    "React/Next.js",
+    "Node.js",
+    "Python",
+    "WebSockets",
+    "WebRTC",
+    "GStreamer/RTSP",
+    "Tailwind CSS",
+    "Design Systems",
+    "State Management",
+    "Microfrontends",
+    "System Architecture",
+    "Kotlin Multiplatform",
+    "Kotlin",
+    "MAVLink",
+    "ROS2",
+    "Git",
+    "Docker",
+    "Claude Code"
+  ],
+  "summary": "Full Stack developer building the software that connects people to the physical world. Currently developing a Kotlin Multiplatform C2 app at Algolight, operating drones and ground robots from a single Android/Linux client for the IDF Robotics and Automation Division, now serving 100+ operators in the field. I own the operator-facing platform end to end: live operations views, real-time video and telemetry, control pipelines, and deployment and monitoring in live field operations. Previously Lead Frontend Developer at IDF Robotics and Automation, leading frontend development of a vehicle remote control system deployed across 100+ remote vehicles.",
+  "work": [
+    {
+      "badges": [],
+      "company": "Algolight Ltd",
+      "description": "Developing a Kotlin Multiplatform Command and Control (C2) application for operating and supervising heterogeneous robotic units — drones and ground robots — from a single Android/Linux client, serving the IDF’s Robotics and Automation Division, now serving 100+ operators in the field.\n\n- Owning the operator-facing product end to end: building a unit-agnostic architecture where live video (GStreamer/RTSP), MAVLink telemetry, recording, and control are shared pipelines across all unit types.\n- Designing and building the real-time operations view operators actually work with — live video, telemetry, and control in one client — now serving 100+ operators in the field.\n- Taking end-to-end technical responsibility from design to production release, including deployment and monitoring in live field operations.\n- Leading system design and strategic planning for multi-faceted defense projects, working directly with defense industry stakeholders to deliver field-ready solutions.",
+      "end": null,
+      "start": "2025",
+      "title": "Software Developer"
+    },
+    {
+      "badges": [],
+      "company": "IDF - Robotics & Automation",
+      "description": "Leading the design and development of frontend architecture and backend features for full-stack applications in the field of autonomous robotics and drones.\n\n- Led the frontend development of a vehicle remote control system deployed across 100+ remote vehicles used in live field operations.\n- Architected and implemented a Microfrontends solution to improve development scalability and team efficiency.\n- Took an active role in system design, planning, and implementation across multiple projects.\n- Collaborated with leading defense industry partners to deliver cutting-edge front-end solutions.",
+      "end": "2025",
+      "start": "2024",
+      "title": "Full Stack Developer | Lead Frontend Developer | Advisor"
+    }
+  ]
+}
